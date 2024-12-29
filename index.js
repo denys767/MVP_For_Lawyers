@@ -139,8 +139,8 @@ bot.command('check', async (ctx) => {
   }
 });
 
-// Автоматична перевірка щодня о 18:00 через node-cron
-cron.schedule('* * * * *', async () => {
+// Автоматична перевірка щодня о 18:00 через node-cron 0 18 * * *
+cron.schedule('0 18 * * *', async () => {
   for (const url of urls) {
     const result = await checkForChanges(url);
 
